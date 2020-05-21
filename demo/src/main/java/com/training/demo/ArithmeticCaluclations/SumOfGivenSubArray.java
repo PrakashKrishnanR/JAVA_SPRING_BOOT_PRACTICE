@@ -28,30 +28,7 @@ public class SumOfGivenSubArray {
     public List<List<Integer>> subArray(int[] inputArray, int expectedsum){
 
         List<List<Integer>> returnList = new ArrayList();
-        List<Integer> subArrayList;
-        int sum =0;
-        for(int i=0; i< inputArray.length; i++){
-            sum = inputArray[i];
-            if(sum == expectedsum){
-                subArrayList = new ArrayList<>();
-                subArrayList.add(inputArray[i]);
-                returnList.add(subArrayList);
-            }
-            for (int j= i+1; j< inputArray.length; j++){
-                sum += inputArray[j];
-                if( sum > expectedsum){
-                    break;
-                }else if (sum == expectedsum){
-                    subArrayList = new ArrayList<>();
-                    int index =0;
-                    for(int k=i; k<=j;k++){
-                        subArrayList.add(inputArray[k]);
-                        index++ ;
-                    }
-                    returnList.add(subArrayList);
-                }
-            }
-        }
+        
         return returnList;
     }
 }
